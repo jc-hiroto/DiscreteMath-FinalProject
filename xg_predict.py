@@ -39,3 +39,5 @@ xgbc = xgb.XGBClassifier(
  tree_method='gpu_hist')
 xgbc.fit(x_train, y_train)
 print("Accuracy:",xgbc.score(x_test,y_test))
+y_pred = pd.DataFrame(data = xgbc.predict_proba(x_test),columns=['prob1','prob2'])
+print(y_pred.head())
